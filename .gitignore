@@ -1,18 +1,53 @@
 # ignore everything in the root except the "wp-content" directory.
 !wp-content/
 
+dev/
+wp-admin/*
+wp-includes/*
+wp-content/backup/*
+wp-content/cache/*
+wp-content/upgrade/*
+wp-content/uploads/*
+wp-content/plugins/*
+wp-content/mu-plugins/*
+config.codekit3
+sitemap.*
+index.php
+license.txt
+readme.html
+robots.txt
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+wp-config.php
+bourbon/
+.htaccess
+
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
-wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
+#wp-content/*
 !wp-content/themes/
+!wp-content/themes/skyranch2022/index.php
 
 # ignore these plugins
 wp-content/plugins/hello.php
 
 # ignore specific themes
 wp-content/themes/twenty*/
+
+#ignore ga.php
+wp-content/themes/skyranch2022/assets/_inc/ga.php
+
 
 # ignore node dependency directories
 node_modules/
@@ -21,3 +56,8 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+
+# Hidden system files
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
