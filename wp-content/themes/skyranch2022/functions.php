@@ -61,6 +61,59 @@ function wpt_register_css(){
 add_action('init','wpt_register_js');
 add_action('wp_enqueue_scripts', 'wpt_register_css');
 
+// Custom Post Types
+add_action('init','create_post_type');
+function create_post_type(){
+  register_post_type('home-builders', array(
+	  'label' => __('Home Builders'),
+    'singular_label' => __('Home Builder'),
+    'public' => true,
+    'show_ui' => true,
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'rewrite' => array('slug' => 'home-builders'),
+    'supports' => array('title','author','excerpt','thumbnail','order','page-attributes','editor'),
+    'menu_position' => 16,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-admin-home'
+  ));
+}
+
+
+function modify_read_more_link(){
+  $_moreLink = '<a class="link link--arrowed" href="' . get_permalink() . '">';
+  $_moreLink .= file_get_contents(get_template_directory_uri() . '/assets/images/icons/arrow-icon.svg');
+  $_moreLink .= '</a>';
+
+  return $_moreLink;
+}
+add_filter('the_content_more_link', 'modify_read_more_link');
+
+add_filter('get_the_archive_title', function($title) {
+  if ( is_category() ) {
+    $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) {
+    $title = single_tag_title( '', false );
+  } elseif ( is_author() ) {
+    $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+  } elseif ( is_tax() ) { //for custom post types
+    $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+  } elseif (is_post_type_archive()) {
+    $title = post_type_archive_title( '', false );
+  }
+  return $title;
+});
+
+// get post id by slug
+function get_id_slug($slug){
+  $post = get_page_by_path($slug);
+  if($post){
+    return $page->ID;
+  } else {
+    return null;
+  }
+}
+
 // Add Class to Images posted on pages
 function add_responsive_class($content){
   $content = mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8');

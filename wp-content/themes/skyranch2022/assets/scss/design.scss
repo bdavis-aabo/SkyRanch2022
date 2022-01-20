@@ -28,15 +28,15 @@ $heading-scale:   4;
 .script-txt { font-family: 'quickpen', sans-serif; text-transform: lowercase; }
 
 // COLORS
-$white:      #fff;
-$ltgray:     #ccc;
-$gray:       #555759;
-$black:      #000;
-$aqua:       #83BAF1;
-$ltblue:     #40A6D2;
-$peach:      #F58B70;
-$green:      #119B93;
-$yellow:     #fedb56;
+$white:		#fff;
+$black:		#000;
+$ltgray:		#879495;
+$yellow:	    #ffdf4f;
+$orange: 	   #f57a23;
+$dkblue:	   #2e6065;
+$ltblue:		#30b0e5;
+$peach:	   #f58b70;
+$tan:		 #f5f4ef;
 
 .peach-txt { color: $peach; }
 .blue-txt  { color: $ltblue; }
@@ -45,28 +45,24 @@ $yellow:     #fedb56;
 
 // BUTTONS
 .btn { text-transform: uppercase; font-size: 1em; transition: all 666ms ease-in-out;
-  &.outline-btn { border: 1px solid $gray; color: $gray; padding: 6px 25px 3px;
+  &.outline-btn { border: 1px solid $ltgray; color: $ltgray; padding: 6px 25px 3px;
     &:hover { color: $ltgray; border-color: $ltgray; }
   }
 }
 
 
 // Base Styles
-body {
-  font-family:  'avenir', sans-serif;
-  font-size:    $base-font-size;
-  line-height:  $line-height;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smooting: grayscale;
-  color: $gray;
-  @include headings($base-font-size, $heading-scale - 1);
-  h1 { color: $ltblue;
-    em { font-family: 'quickpen', }
-  }
-  a { transition: all 666ms ease-in-out;
-    &:hover { text-decoration: none; }
-  }
-  p { margin: 0 0 10px; }
+body { font-family:  'avenir', sans-serif; font-size:    $base-font-size; line-height:  $line-height;  -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smooting: grayscale; color: $ltgray;
+
+	@include headings($base-font-size, $heading-scale - 1);
+	h1 { color: $ltblue;
+		em { font-family: 'quickpen', }
+	}
+	a { transition: all 666ms ease-in-out;
+		&:hover { text-decoration: none; }
+	}
+	p { margin: 0 0 10px; }
 }
 
 
@@ -77,10 +73,9 @@ No media query...Bootstrap default
 
 /*** SMALL DEVICES : Landscape phones, 576px + ***/
 @media (min-width: 576px){
-  body {
-    @include headings($base-font-size, $heading-scale * 1.25);
-
-  }
+	body {
+		@include headings($base-font-size, $heading-scale * 1.25);
+	}
 }
 
 /*** MEDIUM DEVICES : Tablets, 768px + ***/
