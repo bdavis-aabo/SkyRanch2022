@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-index page do not use
+blog page template
 
 <?php get_footer(); ?>
