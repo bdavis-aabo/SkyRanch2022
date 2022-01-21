@@ -23,3 +23,19 @@
   <?php wp_head() ?>
 </head>
 <body <?php body_class(); ?>>
+
+	<header class="header">
+		<nav class="navigation" role="navigation">
+			<?php
+				wp_nav_menu(array(
+					'menu'						=>	'main-menu',
+					'depth'						=>	1,
+					'container'				=>	'div',
+					'container_class'	=>	'',
+					'container_id'		=>	'main-menu-navbar',
+					'menu_class'			=>	'main-menu'
+				));
+			?>
+			<button class="ltblue-btn btn contactBtn" data-target="contactBox">Contact</button>
+		</nav>
+	</header>

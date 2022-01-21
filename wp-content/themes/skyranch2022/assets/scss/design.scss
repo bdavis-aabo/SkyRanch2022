@@ -30,30 +30,36 @@ $heading-scale:   4;
 // COLORS
 $white:		#fff;
 $black:		#000;
-$ltgray:		#879495;
-$yellow:	    #ffdf4f;
-$orange: 	   #f57a23;
-$dkblue:	   #2e6065;
-$ltblue:		#30b0e5;
-$peach:	   #f58b70;
-$tan:		 #f5f4ef;
+$ltgray:	#6d6e71;
+$yellow:	#ffdf4f;
+$orange: 	#f57a23;
+$dkblue:	#435360;
+$aqua:		#30b0e5;
+$ltblue:	#82cbe1;
+$peach:	  #f58b70;
+$tan:		  #f5f4ef;
 
 .peach-txt { color: $peach; }
 .blue-txt  { color: $ltblue; }
 
 .ltblue-bg { background: $ltblue; color: $white; }
+.peach-bg  { background: $peach; color: $white; }
+.dkblue-bg { background: $dkblue; color: $white; }
 
 // BUTTONS
 .btn { text-transform: uppercase; font-size: 1em; transition: all 666ms ease-in-out;
   &.outline-btn { border: 1px solid $ltgray; color: $ltgray; padding: 6px 25px 3px;
     &:hover { color: $ltgray; border-color: $ltgray; }
-  }
+
+		&.white-btn { border-color: $white; color: $white; }
+	}
 }
 
 
 // Base Styles
-body { font-family:  'avenir', sans-serif; font-size:    $base-font-size; line-height:  $line-height;  -webkit-font-smoothing: antialiased;
-	 -moz-osx-font-smooting: grayscale; color: $ltgray;
+body {
+	font-family: 'avenir', sans-serif; font-size: $base-font-size; line-height: $line-height; -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smooting: grayscale; color: $ltgray; background: $white;
 
 	@include headings($base-font-size, $heading-scale - 1);
 	h1 { color: $ltblue;

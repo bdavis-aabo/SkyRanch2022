@@ -34,8 +34,8 @@ function wpt_register_js(){
     wp_deregister_script('jquery');
 
     wp_enqueue_script('jquery', '//code.jquery.com/jquery-3.3.1.min.js', 'jquery', '', true);
-    wp_enqueue_script('jquery.popper.min', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', 'jquery', '', true);
-  	wp_enqueue_script('jquery.bootstrap.min', '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', 'jquery', '', true);
+    wp_enqueue_script('jquery.popper.min', '//cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', 'jquery', '', true);
+  	wp_enqueue_script('jquery.bootstrap.min', '//cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js', 'jquery', '', true);
   	wp_enqueue_script(
     	'jquery.extras.min',
       get_template_directory_uri() . '/assets/js/min/main.min.js',
@@ -47,7 +47,7 @@ function wpt_register_js(){
 }
 
 function wpt_register_css(){
-  wp_enqueue_style('bootstrap.min', '//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+  wp_enqueue_style('bootstrap.min', '//cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css');
   wp_enqueue_style('fontawesome.min', '//use.fontawesome.com/releases/v5.6.3/css/all.css');
   wp_enqueue_style(
     'main.min',
@@ -106,6 +106,31 @@ function builder_taxonomies(){
 }
 // end Builder Taxonomies
 
+// Create Widget Areas
+function footer_copyright_widget(){
+  register_sidebar(array(
+    'name'          =>  'Footer Copyright',
+    'id'            =>  'footer-copyright',
+    'before_widget' =>  '<div class="footer-copyright">',
+    'after_widget'  =>  '</div>',
+    'before_title'  =>  '',
+    'after_title'   =>  '',
+  ));
+}
+add_action('widgets_init','footer_copyright_widget');
+
+function footer_address_widget(){
+  register_sidebar(array(
+    'name'          =>  'Footer Address',
+    'id'            =>  'footer-address',
+    'before_widget' =>  '<div class="footer-address">',
+    'after_widget'  =>  '</div>',
+    'before_title'  =>  '',
+    'after_title'   =>  '',
+  ));
+}
+add_action('widgets_init','footer_address_widget');
+
 
 function modify_read_more_link(){
   $_moreLink = '<a class="link link--arrowed" href="' . get_permalink() . '">';
@@ -133,8 +158,8 @@ add_filter('get_the_archive_title', function($title) {
 
 // get post id by slug
 function get_id_slug($slug){
-  $post = get_page_by_path($slug);
-  if($post){
+  $page = get_page_by_path($slug);
+  if($page){
     return $page->ID;
   } else {
     return null;
