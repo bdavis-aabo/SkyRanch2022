@@ -25,9 +25,4 @@
 			</ul>
 		</div>
 	</section>
-
-
-
-
-
 	<?php endif; ?>

@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -25,17 +25,24 @@
 <body <?php body_class(); ?>>
 
 	<header class="header">
-		<nav class="navigation" role="navigation">
-			<?php
-				wp_nav_menu(array(
-					'menu'						=>	'main-menu',
-					'depth'						=>	1,
-					'container'				=>	'div',
-					'container_class'	=>	'',
-					'container_id'		=>	'main-menu-navbar',
-					'menu_class'			=>	'main-menu'
-				));
-			?>
-			<button class="ltblue-btn btn contactBtn" data-target="contactBox">Contact</button>
-		</nav>
+		<div class="header-identity">
+			<a href="<?php bloginfo('url') ?>" title="<?php bloginfo('name') ?>" class="header-logo">
+				<?php echo file_get_contents(get_template_directory_uri() . '/assets/images/skyranch-logo_gray.svg') ?>
+			</a>
+		</div>
+		<div class="header-right">
+			<nav class="navigation" role="navigation">
+				<?php
+					wp_nav_menu(array(
+						'menu'						=>	'main-menu',
+						'depth'						=>	1,
+						'container'				=>	'div',
+						'container_class'	=>	'',
+						'container_id'		=>	'main-menu-navbar',
+						'menu_class'			=>	'main-menu'
+					));
+				?>
+				<button class="ltblue-btn btn contactBtn" data-target="contactBox">Contact</button>
+			</nav>
+		</div>
 	</header>

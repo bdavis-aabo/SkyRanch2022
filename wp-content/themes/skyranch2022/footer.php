@@ -1,4 +1,4 @@
-	<?php get_template_part( 'page/footer-builders' ); ?>
+	<?php get_template_part('page/footer-builders'); ?>
 
 	<footer class="footer">
 		<section class="footer-top ltblue-bg">
@@ -10,10 +10,10 @@
 			</div>
 		</section>
 		<section-footer-bottom class="white-bg">
-			copyright info
+			<p class="copyright">&copy<?php echo date('Y') ?> Pure Cycle</p>
+			<?php if(is_active_sidebar('footer-copyright')): dynamic_sidebar('footer-copyright'); endif; ?>
 		</section-footer-bottom>
 	</footer>
-
 
 	<?php wp_footer(); ?>
 </body>
