@@ -4,7 +4,8 @@
       font-size: $x + $y * (6 - $i);
       margin-top: 0;
       margin-bottom: ($x + $y * (6 - $i)) / 2;
-      font-family: 'avenir', sans-serif;
+      font-family: 'avenir-heavy', sans-serif;
+			font-weight: normal;
       line-height: ($x + $y * (6 - $i)) * 1.1;
     }
   }

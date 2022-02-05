@@ -9,11 +9,13 @@
 				<?php if(is_active_sidebar('footer-address')): dynamic_sidebar('footer-address'); endif; ?>
 			</div>
 		</section>
-		<section-footer-bottom class="white-bg">
+		<section class="footer-bottom white-bg">
 			<p class="copyright">&copy<?php echo date('Y') ?> Pure Cycle</p>
 			<?php if(is_active_sidebar('footer-copyright')): dynamic_sidebar('footer-copyright'); endif; ?>
-		</section-footer-bottom>
+		</section>
 	</footer>
+
+	<?php get_template_part('page/page-contact') ?>
 
 	<?php wp_footer(); ?>
 </body>

@@ -1,0 +1,170 @@
+// NAV BUTTON
+.nav-btn { background: transparent; border: none; border-radius: 0; cursor: pointer; z-index: 101;
+  width: 30px; height: 12px; transform: translateY(-50%) rotate(0deg); transition: transform 666ms ease-in-out;
+  &:focus { outline: 0; }
+  .nav-iconbar { display: block; position: absolute; height: 1px; width: 100%; background: $ltgray; box-shado: 0 0 2px rgba($black,.3); opacity: 1; left: 0; top: 0;
+    transform: rotate(0deg); transition: 0.25s ease-in-out;
+    &:nth-child(1) { top: 0; }
+    &:nth-child(2),
+    &:nth-child(3) { top: 9px; }
+    &:nth-child(4) { top: 18px; }
+  }
+  &.open {
+    .nav-iconbar {
+      &:nth-child(1) { top: 12px; opacity: 0; }
+      &:nth-child(2) { transform: rotate(-45deg); transition-delay: .3s; }
+      &:nth-child(3) { transform: rotate(45deg); transition-delay: .3s; }
+      &:nth-child(4) { top: 12px; opacity: 0; }
+    }
+  }
+}
+
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+	height: 60px; background: white; padding: 0 1rem;
+	.header-identity {
+		.header-logo {
+			svg { width: 250px; }
+		}
+	}
+	.header-right { position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba($white, .9); z-index: 1; transform: translateY(-100%);
+		opacity: 0; transition: all 666ms ease-in-out; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; padding: 5rem 0;
+		&.is-visible { transform: translateY(0); opacity: 1; }
+		.navigation { flex-basis: 100%; flex-grow: 1; padding: 0; position: relative; font-size: 18px; text-transform: uppercase;
+			#main-menu-navbar { flex-basis: 100%; flex-grow: 1;
+				.main-menu { list-style: none; margin: 0; padding: 0;
+					.menu-item { padding: .75rem 1.5rem;
+						a { color: $ltgray;
+							&:hover { color: $ltblue; }
+						}
+						&.contactBtn { flex-basis: 100%; background: $aqua; color: $white;
+							a { color: $white; }
+						}
+					}
+				}
+
+			}
+			.contactBtn { cursor: pointer;
+				&:focus { outline: none; }
+				&.nomobile { display: none; }
+			}
+		}
+	}
+}
+
+
+/*** SMALL DEVICES : Landscape phones, 576px + ***/
+@media (min-width: 576px){
+
+}
+
+/*** IPHONE X : Landscape ***/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/*** MEDIUM DEVICES : Tablets, 768px + ***/
+@media (min-width: 768px){
+
+}
+
+/*** LARGE DEVICES : Desktops, 992px and up ***/
+@media (min-width: 992px){
+	.header { height: 90px; padding: 0 1.25rem; flex-wrap: nowrap; position: relative;
+		.header-identity { flex-basis: 25%;
+			.header-logo {
+				svg { width: 300px; }
+			}
+		}
+		.nav-btn { display: none; }
+		.header-right { flex-basis: 75%; position: unset; transform: translateY(0); opacity: 1; flex-wrap: nowrap; justify-content: space-between;
+			background: transparent; bottom: auto; padding: 0;
+			.navigation { display: flex; flex-wrap: nowrap; justify-content: flex-start; align-items: center; margin-bottom: 0;
+				#main-menu-navbar { font-size: .8em; margin-left: 0; flex-basis: auto; flex-grow: 0;
+          .main-menu { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; margin-bottom: 0; margin-left: 0;
+            .menu-item { padding: .75rem .85rem;
+              a { color: $ltgray; }
+              &.mobileonly { display: none; }
+
+              &.current-menu-item {
+                a { color: $aqua; }
+              }
+            }
+          }
+        }
+        .contactBtn { width: auto; font-size: .8em; letter-spacing: 1px; padding: 0; height: 100%; margin-left: auto; color: $white;
+          &.nomobile { display: block; flex-basis: auto; }
+        }
+			}
+		}
+		.angle { position: absolute; right: 0; top: 0; bottom: 0; width: 120px;
+			&:before,
+			&:after { content: ''; width: 100%; height: 100%; position: absolute; background: inherit; z-index: -1; top: 0; transform-origin: left top;
+				transform: skew(-15deg); }
+			//&:after { bottom: 0; transform-origin: left bottom; transform: skew(9deg); }
+		}
+	}
+}
+
+/*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/
+@media (min-width: 1200px){
+	.header {
+		.header-identity { //flex-basis: 30%;
+			.header-logo {
+				svg { width: 325px; }
+			}
+		}
+		.header-right { //flex-basis: 70%;
+			.navigation {
+				#main-menu-navbar { //font-size: .9em;
+					.main-menu { justify-content: flex-start;
+						.menu-item { padding: .75rem 1rem; }
+					}
+				}
+				//.contactBtn { font-size: .95em; }
+			}
+		}
+		.angle { width: 100px;
+			&:before,
+			&:after { transform: skew(-30deg); }
+		}
+	}
+}
+
+/*
+:::::::::: CUSTOM MEDIA QUERIES IF NEEDED ::::::::::
+*/
+@media (min-width: 1350px){
+	.header {
+		.header-identity { flex-basis: 30%; }
+		.header-right {
+			.navigation {
+				#main-menu-navbar,
+				.contactBtn { font-size: .9em; }
+				#main-menu-navbar {
+					.main-menu { justify-content: flex-start;
+						.menu-item { padding: .75rem 1.25rem; }
+					}
+				}
+			}
+		}
+		.angle { //width: 125px;
+			&:before,
+			&:after { transform: skew(-45deg); }
+		}
+	}
+}
+
+@media (min-width: 1600px){
+	.header {
+		.header-right {
+			.navigation {
+				.contactBtn { padding-right: 15px; }
+			}
+		}
+		.angle { width: 150px;
+			&:before,
+			&:after { transform: skew(-45deg); }
+		}
+	}
+}

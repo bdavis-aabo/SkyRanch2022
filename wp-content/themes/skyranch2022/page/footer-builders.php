@@ -6,7 +6,8 @@
   	'posts_per_page' 	=> -1,
   	'order' 					=> 'ASC',
   	'orderby' 				=> 'title',
-		'post_parent'			=> get_id_slug('homes')
+		'post_parent'			=> get_id_slug('homes'),
+		'post__not_in'		=> array(141)
 	);
 	$_builders->query($_args);
 ?>

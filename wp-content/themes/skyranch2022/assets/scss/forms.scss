@@ -1,0 +1,115 @@
+.contact-form-section { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: $white; z-index: 99; transform: translateX(100%); opacity: 0;
+	transition: all 666ms ease-in-out;
+	&.is-visible { transform: translateX(0); opacity: 1; }
+
+	.contact-logo { max-width: 250px; margin: 0; padding-left: 1rem;
+		svg { width: 100%; }
+	}
+	.closeContactForm { position: absolute; top: 17.5px; right: 10px; font-size: 28px; border: none; background: transparent; color: $ltgray; padding: 0; }
+	.contact-form-container { background: $aqua; position: absolute; top: 0; //clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+		padding: 2.5vh 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 60px; height: calc(100vh - 60px);
+
+
+		.form-contents { flex-basis: 90%;
+			h1, p { color: $white; text-align: center; }
+			h1 { font-size: 28px; }
+			p { margin-bottom: 20px; }
+
+			.wpcf7-form {
+				.form-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+					.form-group { margin-bottom: 0; flex-basis: 100%; flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+						input[type='text'],
+						input[type='email'] { background: transparent; border: 1px solid $white; border-radius: 20px; box-shadow: none; color: $white;
+							appearance: none;
+							&::placeholder { color: $white; }
+						}
+						.form-control { margin-bottom: 1rem;
+
+						}
+						.one-half { flex-basis: 48%; }
+						&.builders {
+							.builder-container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+								.control { flex-basis: 48%; color: $white; margin-bottom: 10px;
+									&:last-child { flex-basis: 100%; flex-grow: 1; }
+								}
+							}
+						}
+						&.realtor { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center;
+							.form-control { padding: 8px 0 0; margin-left: 10px; margin-bottom: 0; background: transparent; border: none; color: $white; }
+						}
+
+						&.submit { text-align: center;
+							.yellow-btn { background: $yellow; color: $ltgray; border-radius: 20px; padding: .5rem 1.5rem; }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*** SMALL DEVICES : Landscape phones, 576px + ***/
+@media (min-width: 576px){
+
+}
+
+/*** IPHONE X : Landscape ***/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/*** MEDIUM DEVICES : Tablets, 768px + ***/
+@media (min-width: 768px){
+	.contact-form-section {
+		.closeContactForm { z-index: 100; color: $white; }
+		.contact-logo { max-width: 300px; }
+		.contact-form-container { margin-top: 0; clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0 100%, 0 10%, 55% 0); height: 100%;
+			.form-contents {
+				h1 { font-size: 36px; }
+				p { font-size: 1.1em; }
+
+				.wpcf7-form {
+					.form-container {
+						.form-group {
+							&.builders { justify-content: center;
+								.builder-container { justify-content: center;
+									.control { flex-basis: auto; padding: 0 8px;
+										&:last-child { flex-basis: auto; flex-grow: 0; }
+									}
+								}
+							}
+							&.realtor,
+							&.submit { justify-content: center; }
+							&.submit {
+								.yellow-btn { padding: .75rem 3rem .5rem; }
+								.wpcf7-spinner { flex-grow: 1; flex-basis: 100%; margin: 10px 0; }
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+/*** LARGE DEVICES : Desktops, 992px and up ***/
+@media (min-width: 992px){
+	.contact-form-section {
+		.contact-form-container {
+			.form-contents { flex-basis: 60%; }
+		}
+	}
+}
+
+/*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/
+@media (min-width: 1200px){
+	.contact-form-section {
+		.contact-form-container { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0 100%, 0 10%, 40% 0); }
+	}
+}
+
+/*
+:::::::::: CUSTOM MEDIA QUERIES IF NEEDED ::::::::::
+*/

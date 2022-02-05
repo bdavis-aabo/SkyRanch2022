@@ -35,7 +35,7 @@
 				</figure>
 				<?php echo get_sub_field('callout_content') ?>
 
-				<a href="<?php echo get_sub_field('callout_page') ?>" class="">
+				<a href="<?php echo get_sub_field('callout_page') ?>" class="arrow-link">
 					<?php echo file_get_contents(get_template_directory_uri() . '/assets/images/arrow.svg') ?>
 				</a>
 			</article>
@@ -53,6 +53,11 @@
 				<a href="<?php get_sub_field('callout_page') ?>" title="Everything important within reach." class="btn outline-btn white-btn">Learn more</a>
 			</div>
 			<?php endwhile; ?>
+			<div class="location-right">
+				<figure class="map-image">
+					<img src="<?php bloginfo('template_directory') ?>/assets/images/map-sidebar-image.jpg" alt="<?php bloginfo('name') ?> - Location" class="img-fluid" />
+				</figure>
+			</div>
 		</div>
 	</section>
 

@@ -18,6 +18,7 @@ img { display: inherit; }
 
 // FONTS
 @include font-face('avenir','../fonts/avenir/AvenirLTStd-Roman');
+@include font-face('avenir-heavy','../fonts/avenir/AvenirLTStd-Black');
 @include font-face('brandon','../fonts/brandon-grostesque/brandon-grostesque');
 @include font-face('quickpen','../fonts/trial/trial-webfont');
 
@@ -31,6 +32,7 @@ $heading-scale:   4;
 $white:		#fff;
 $black:		#000;
 $ltgray:	#6d6e71;
+$ultgray: tint($ltgray, 90);
 $yellow:	#ffdf4f;
 $orange: 	#f57a23;
 $dkblue:	#435360;
@@ -41,28 +43,39 @@ $tan:		  #f5f4ef;
 
 .peach-txt { color: $peach; }
 .blue-txt  { color: $ltblue; }
+.orange-txt { color: $orange; }
 
-.ltblue-bg { background: $ltblue; color: $white; }
+.ultgray-bg { background: $ultgray; }
+.ltgray-bg { background: $ltgray; }
+.ltblue-bg { background: $ltblue; color: $white;
+	&:hover  { color: $ltgray; }
+}
+.aqua-bg   { background: $aqua; }
 .peach-bg  { background: $peach; color: $white; }
 .dkblue-bg { background: $dkblue; color: $white; }
 
+
 // BUTTONS
 .btn { text-transform: uppercase; font-size: 1em; transition: all 666ms ease-in-out;
-  &.outline-btn { border: 1px solid $ltgray; color: $ltgray; padding: 6px 25px 3px;
+  &.outline-btn { border: 1px solid $ltgray; color: $ltgray; padding: 6px 2rem 3px; border-radius: 20px;
     &:hover { color: $ltgray; border-color: $ltgray; }
 
 		&.white-btn { border-color: $white; color: $white; }
 	}
+	.yellow-btn { background: $yellow; color: $black; }
 }
 
 
 // Base Styles
+html, body { overflow: auto;
+	&.stuck { overflow: hidden; }
+}
 body {
 	font-family: 'avenir', sans-serif; font-size: $base-font-size; line-height: $line-height; -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smooting: grayscale; color: $ltgray; background: $white;
 
 	@include headings($base-font-size, $heading-scale - 1);
-	h1 { color: $ltblue;
+	h1 {
 		em { font-family: 'quickpen', }
 	}
 	a { transition: all 666ms ease-in-out;
@@ -70,6 +83,12 @@ body {
 	}
 	p { margin: 0 0 10px; }
 }
+.nomobile { display: none; }
+
+.page-divider,
+.homepage-divider { flex-basis: 60%; }
+.sub-heading { text-transform: uppercase; font-family: 'avenir'; font-size: 18px; margin: 2.5rem 0; flex-grow: 1; flex-basis: 100%; text-align: center; }
+
 
 
 /*
@@ -89,9 +108,9 @@ No media query...Bootstrap default
 
 }
 
-/*** LARGE DEVICES : Desktops, 992px and up ***
+/*** LARGE DEVICES : Desktops, 992px and up ***/
 @media (min-width: 992px){
-
+ .nomobile { display: block; }
 }
 
 /*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/

@@ -30,6 +30,12 @@
 				<?php echo file_get_contents(get_template_directory_uri() . '/assets/images/skyranch-logo_gray.svg') ?>
 			</a>
 		</div>
+		<button class="nav-btn" type="button">
+			<span class="nav-iconbar"></span>
+        <span class="nav-iconbar"></span>
+        <span class="nav-iconbar"></span>
+        <span class="nav-iconbar"></span>
+		</button>
 		<div class="header-right">
 			<nav class="navigation" role="navigation">
 				<?php
@@ -42,7 +48,8 @@
 						'menu_class'			=>	'main-menu'
 					));
 				?>
-				<button class="ltblue-btn btn contactBtn" data-target="contactBox">Contact</button>
+				<button class="ltblue-btn btn contactBtn contactCallout nomobile" data-target="contactBox">Contact</button>
 			</nav>
 		</div>
+		<div class="angle aqua-bg nomobile"></div>
 	</header>

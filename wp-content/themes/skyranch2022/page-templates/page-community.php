@@ -21,6 +21,9 @@
 				<h1 class="page-title"><?php the_title() ?></h1>
 				<?php the_content() ?>
 			</div>
+			<div class="page-divider">
+				<img src="<?php bloginfo('template_directory') ?>/assets/images/color-bar.png" class="img-fluid" alt="color bar" />
+			</div>
 		</section>
 
 		<?php if(have_rows('community_education')): ?>
@@ -30,7 +33,7 @@
 				<figure class="education-image">
 					<img src="<?php echo $_educationImage['url'] ?>" alt="<?php echo $_educationImage['alt'] ?>" class="img-fluid" />
 				</figure>
-				<div class="education-content">
+				<div class="education-content peach-bg">
 					<?php echo get_sub_field('education_content'); ?>
 				</div>
 				<?php endwhile; ?>
