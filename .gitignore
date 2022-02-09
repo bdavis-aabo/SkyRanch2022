@@ -10,6 +10,7 @@ wp-content/upgrade/*
 wp-content/uploads/*
 wp-content/plugins/*
 wp-content/mu-plugins/*
+wp-content/smush-webp/*
 config.codekit3
 sitemap.*
 index.php
