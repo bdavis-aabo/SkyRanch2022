@@ -167,7 +167,7 @@
 					&:hover > .front { transform: perspective(600px) rotateY(-180deg); }
 					&:hover > .back  { transform: perspective(600px) rotateY(0deg); }
 
-					.front { background: $aqua; }
+					.front { background: $dkblue; }
 					.back { transform: rotateY(180deg); display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
 						.back-contents { text-align: center;
 							.article-title { font-size: 36px; margin-bottom: 2rem; }
