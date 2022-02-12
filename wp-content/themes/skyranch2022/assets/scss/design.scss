@@ -75,7 +75,7 @@ html, body { overflow: auto;
 }
 body {
 	font-family: 'avenir', sans-serif; font-size: $base-font-size; line-height: $line-height; -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smooting: grayscale; color: $ltgray; background: $white;
+	-moz-osx-font-smooting: grayscale; color: $ltgray; background: $white; font-display: fallback;
 
 	@include headings($base-font-size, $heading-scale - 1);
 	h1 {
