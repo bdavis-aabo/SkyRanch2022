@@ -3,7 +3,7 @@
 <?php get_header(); ?>
 
 	<section class="page-section location-map-section">
-		insert mapbox code
+		<div class="map-container" id="locationMap"></div>
 	</section>
 
 	<section class="page-section page-content-section">

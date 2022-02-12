@@ -37,7 +37,7 @@ $yellow:	#ffdf4f;
 $orange: 	#f57a23;
 $dkblue:	#435360;
 $aqua:		#30b0e5;
-$ltblue:	#82cbe1;
+$ltblue:	tint(#82cbe1,20);
 $peach:	  #f58b70;
 $tan:		  #f5f4ef;
 
@@ -62,7 +62,10 @@ $tan:		  #f5f4ef;
 
 		&.white-btn { border-color: $white; color: $white; }
 	}
-	.yellow-btn { background: $yellow; color: $black; }
+	&.yellow-btn { background: $yellow; color: $black; }
+	&.ltblue-btn { background: #82cbe1; color: $white; }
+
+	&:focus { outline: none !important; }
 }
 
 

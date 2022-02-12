@@ -34,7 +34,7 @@
 					<img src="<?php echo $_educationImage['url'] ?>" alt="<?php echo $_educationImage['alt'] ?>" class="img-fluid" />
 				</figure>
 				<div class="education-content peach-bg">
-					<?php echo get_sub_field('education_content'); ?>
+					<div class="education-content-container"><?php echo get_sub_field('education_content'); ?></div>
 				</div>
 				<?php endwhile; ?>
 			</div>

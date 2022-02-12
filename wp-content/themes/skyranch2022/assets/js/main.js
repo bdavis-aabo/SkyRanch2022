@@ -22,4 +22,9 @@ $(document).ready(function(){
 	$('.closeContactForm').click(function(){
 		$('.contact-form-section').removeClass('is-visible');
 	});
+
+
+	var cardH = $('.blog-post > .front > .article-image').width();
+	console.log(cardH);
+	$('.article-container > .card').css('height', cardH + 'px');
 });

@@ -12,7 +12,7 @@
 			<article class="blog-post card" id="post-<?php echo $post->ID ?>">
 				<div class="front">
 					<figure class="article-image">
-						<img src="<?php echo $_postThumb['url'] ?>" alt="<?php the_title() ?>" class="" />
+						<img src="<?php echo $_postThumb['url'] ?>" alt="<?php the_title() ?>" class="img-fluid" />
 					</figure>
 				</div>
 				<div class="back ultgray-bg">

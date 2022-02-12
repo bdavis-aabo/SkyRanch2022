@@ -48,7 +48,7 @@
 						'menu_class'			=>	'main-menu'
 					));
 				?>
-				<button class="ltblue-btn btn contactBtn contactCallout nomobile" data-target="contactBox">Contact</button>
+				<button class="btn contactBtn contactCallout nomobile" data-target="contactBox">Contact</button>
 			</nav>
 		</div>
 		<div class="angle aqua-bg nomobile"></div>

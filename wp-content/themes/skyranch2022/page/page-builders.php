@@ -21,12 +21,12 @@
 			</figure>
 			<p class="collection">
 				<strong><?php echo get_field('homebuilder_collection') ?></strong><br/>
-				<?php the_title(); ?>
+				<?php if($post->post_name == 'lennar-th'): echo 'Lennar'; else: the_title(); endif; ?>
 			</p>
 			<p class="pricing">
 				<?php echo get_field('homebuilder_pricing'); ?>
 			</p>
-			<?php echo get_field('homebuilder_description') ?>
+			<div class="description"><?php echo get_field('homebuilder_description') ?></div>
 
 			<a href="<?php the_permalink() ?>" title="view homes by <?php the_title() ?>" class="btn outline-btn gray-btn">View Homes</a>
 		</article>

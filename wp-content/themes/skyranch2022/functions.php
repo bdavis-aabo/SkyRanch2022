@@ -47,6 +47,20 @@ function wpt_register_js(){
   }
 }
 
+function wpt_map_scripts(){
+	if(is_page('location')){
+		wp_enqueue_script('mapbox.min', '//api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js', 'jquery', '', true);
+    wp_enqueue_style('mapbox.min', '//api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css');
+    wp_enqueue_script(
+      'maps.min',
+      get_template_directory_uri() . '/assets/js/maps.min.js',
+      array(),
+      filemtime(get_template_directory() . '/assets/js/maps.min.js'),
+      true
+    );
+	}
+}
+
 function wpt_register_css(){
   wp_enqueue_style('bootstrap.min', '//cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css');
   wp_enqueue_style('fontawesome.min', '//use.fontawesome.com/releases/v5.6.3/css/all.css');
@@ -60,6 +74,7 @@ function wpt_register_css(){
 }
 add_action('init','wpt_register_js');
 add_action('wp_enqueue_scripts', 'wpt_register_css');
+add_action('wp_enqueue_scripts','wpt_map_scripts');
 
 // QUICK MOVE-IN POST TYPE
 add_action('init','create_quick_moves');

@@ -49,8 +49,10 @@
 		<div class="location-container">
 			<?php while(have_rows('homepage_location_callout')): the_row(); ?>
 			<div class="location-left-contents peach-bg">
-				<?php echo get_sub_field('callout_content'); ?>
-				<a href="<?php get_sub_field('callout_page') ?>" title="Everything important within reach." class="btn outline-btn white-btn">Learn more</a>
+				<div class="left-container">
+					<?php echo get_sub_field('callout_content'); ?>
+					<a href="<?php get_sub_field('callout_page') ?>" title="Everything important within reach." class="btn outline-btn white-btn">Learn more</a>
+				</div>
 			</div>
 			<?php endwhile; ?>
 			<div class="location-right">
