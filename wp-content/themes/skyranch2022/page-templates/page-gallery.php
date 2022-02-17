@@ -8,7 +8,9 @@
 </section>
 
 <section class="page-section gallery-section">
-	insert gallery
+	<div class="gallery-container">
+		<?php echo do_shortcode('[envira-gallery slug="sky-ranch-photo-gallery"]') ?>
+	</div>
 </section>
 
 <?php get_footer(); ?>

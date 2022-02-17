@@ -201,6 +201,15 @@
 	}
 }
 
+// GALLERY PAGE STYLES
+.page-template-page-gallery {
+	.page-section {
+		&.gallery-section { margin: 3rem 0; padding: 0; align-items: flex-start;
+			.gallery-container { flex-basis: 95%; height: 100%; }
+		}
+	}
+}
+
 // Footer Styles
 .footer-section { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
 	.builder-logo-container { padding: 1rem 0;
