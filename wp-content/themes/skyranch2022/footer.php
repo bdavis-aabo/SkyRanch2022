@@ -10,13 +10,14 @@
 			</div>
 		</section>
 		<section class="footer-bottom white-bg">
-			<p class="copyright">&copy<?php echo date('Y') ?> Pure Cycle</p>
+			<p class="copyright">&copy;<?php echo date('Y') ?> Pure Cycle</p>
 			<?php if(is_active_sidebar('footer-copyright')): dynamic_sidebar('footer-copyright'); endif; ?>
+			<p class="copyright"><img src="<?php bloginfo('template_directory') ?>/assets/images/eho-icon.jpg" class="aligncenter" /></p>
+
 		</section>
 	</footer>
 
 	<?php get_template_part('page/page-contact') ?>
-
 	<?php wp_footer(); ?>
 </body>
 </html>

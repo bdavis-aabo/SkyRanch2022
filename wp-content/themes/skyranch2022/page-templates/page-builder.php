@@ -26,6 +26,7 @@
 
 				<p class="builder-location">
 					<strong>Sales Office Information</strong><br/>
+					<?php if(is_page('kb-home')): ?> Temporary sales office located at:<br/><?php endif; ?>
 					<?php echo get_field('homebuilder_address') ?><br/>
 					<?php echo get_field('homebuilder_phone') ?>
 				</p>
