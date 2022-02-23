@@ -20,15 +20,19 @@
 				<img src="<?php echo $_builderImage['url'] ?>" alt="<?php the_title() ?>" class="aligncenter img-fluid" />
 			</figure>
 			<p class="collection">
-				<strong><?php echo get_field('homebuilder_collection') ?></strong><br/>
-				<?php if($post->post_name == 'lennar-th'): echo 'Lennar'; else: the_title(); endif; ?>
+				<strong><?php if($post->post_name == 'lennar-th'): echo 'Lennar'; else: the_title(); endif; ?></strong>
 			</p>
 			<p class="pricing">
+				<?php echo get_field('homebuilder_collection') ?><br/>
 				<?php echo get_field('homebuilder_pricing'); ?>
 			</p>
 			<div class="description"><?php echo get_field('homebuilder_description') ?></div>
 
-			<a href="<?php the_permalink() ?>" title="view homes by <?php the_title() ?>" class="btn outline-btn gray-btn">View Homes</a>
+			<?php if($post->post_name == 'kb-home' || $post->post_name == 'richmond-american-homes'): ?>
+				<a href="<?php the_permalink() ?>" title="view homes by <?php the_title() ?>" class="btn outline-btn gray-btn">View Homes</a>
+			<?php else: ?>
+				<a title="join vip list" class="btn contactBtn contactCallout outline-btn gray-btn" data-target="contactBox">Join VIP List</a>
+			<?php endif; ?>
 		</article>
 		<?php endwhile; ?>
 	</div>

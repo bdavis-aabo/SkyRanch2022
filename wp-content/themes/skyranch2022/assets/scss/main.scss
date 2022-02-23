@@ -282,13 +282,13 @@
 
 		// Homes page styles
 		&.page-builders {
-			.builder-container { flex-basis: 97.5%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;
-				.builder { flex-basis: 32%;
+			.builder-container { flex-basis: 97.5%; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
+				.builder { flex-basis: 30%; margin: 0 1% 3rem;
 					p { padding: 0 2rem; margin-bottom: 1.25rem; }
 					.collection { font-style: italic; line-height: 1.35em;
 						strong { font-size: 1em; }
 					}
-					.pricing { font-size: .9em; }
+					.pricing { font-size: 1em; line-height: 1.35em; }
 					.description { display: none; }
 				}
 			}
