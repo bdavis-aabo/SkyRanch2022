@@ -4,7 +4,6 @@
 
 <section class="page-section dkblue-bg blog-header">
 	<h1>Our Gallery.</h1>
-	<h3>lorem ipsum</h3>
 </section>
 
 <section class="page-section gallery-section">
