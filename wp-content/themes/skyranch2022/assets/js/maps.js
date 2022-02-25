@@ -18,7 +18,7 @@ if(winW <= 576){
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnBkYXZpczgxIiwiYSI6ImNrcTQwbDR4NTByZGgycG56N3pkMDB1NGMifQ.5qgmUy3sOAsi5vEhcV3Rmg';
 
-var skyranch = [-104.662134, 39.735];
+var skyranch = [-104.653378, 39.728975];
 //create map
 var map = new mapboxgl.Map({
 	container: 	'locationMap',
@@ -34,18 +34,17 @@ var markerHeight = 35;
 var markerRadius = 10;
 var linearOffset = 25;
 
-var popup = new mapboxgl.Popup({
-	offset: {
-		'top':					[0,0],
-		'top-left':			[0,0],
-		'top-right':		[0,0],
-		'bottom':				[0, -markerHeight],
-		'bottom-left': 	[linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
-    'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
-    'left': 				[markerRadius, (markerHeight - markerRadius) * -2],
-    'right': 				[-markerRadius, (markerHeight - markerRadius) * -1]
-	}
-})
+var popup = new mapboxgl.Popup({ offset: 35 })
+		// 'top':					[0,0],
+		// 'top-left':			[0,0],
+		// 'top-right':		[0,0],
+		// 'bottom':				[0, -markerHeight],
+		// 'bottom-left': 	[linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+    // 'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+    // 'left': 				[markerRadius, (markerHeight - markerRadius) * -2],
+    // 'right': 				[-markerRadius, (markerHeight - markerRadius) * -1]
+	//}
+//})
 .setHTML(
 	'<h1 class="map-title">Visit Sky Ranch</h1>' +
 	'<a href="" class="btn outline-btn white-btn" target="_blank">Get Directions</a>'
