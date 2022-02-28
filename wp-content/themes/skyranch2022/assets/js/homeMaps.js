@@ -1,33 +1,26 @@
 var winW = window.innerWidth;
-var zoom;
-var icon;
 var center;
-if(winW <= 576){
-	zoom = 11.5;
-	icon = .5;
-	center = [-104.662134, 39.735];
-} else if(winW > 576 && winW < 992){
-	zoom = 12.5;
-	icon = 1;
-	center = [-104.662134, 39.735];
+var size;
+
+if(winW <= 570){
+	center = [-104.653378, 39.729410];
+	size = .5
 } else {
-	zoom = 12.5;
-	icon = 1;
-	center = [-104.711254, 39.735];
+	center = [-104.6776, 39.7291];
 }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnBkYXZpczgxIiwiYSI6ImNrcTQwbDR4NTByZGgycG56N3pkMDB1NGMifQ.5qgmUy3sOAsi5vEhcV3Rmg';
 
 var skyranch = [-104.653378, 39.728975];
-//create map
-var map = new mapboxgl.Map({
-	container: 	'locationMap',
+
+var homeMap = new mapboxgl.Map({
+	container:	'homepageMap',
 	style: 			'mapbox://styles/bpdavis81/ckzcvv86d002p16ru8fh6f80y',
-	zoom:				zoom,
+	zoom:				12.5,
 	center:			center
 });
-var nav = new mapboxgl.NavigationControl();
-map.scrollZoom.disable();
+var homeNav = new mapboxgl.NavigationControl();
+homeMap.scrollZoom.disable();
 
 var markerWidth =  245;
 var markerHeight = 35;
@@ -40,6 +33,7 @@ var popup = new mapboxgl.Popup({ offset: 35 })
 		'<a href="" class="btn outline-btn white-btn" target="_blank">Get Directions</a>'
 	);
 
-map.on('click', function(e){
-	popup.setLngLat(skyranch).addTo(map);
+
+homeMap.on('click', function(e){
+	popup.setLngLat(skyranch).addTo(homeMap);
 });

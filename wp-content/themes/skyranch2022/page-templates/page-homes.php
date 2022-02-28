@@ -24,7 +24,6 @@
 		<div class="page-divider">
 			<img src="<?php bloginfo('template_directory') ?>/assets/images/color-bar.png" class="img-fluid" alt="color bar" />
 		</div>
-		<h2 class="sub-heading">Home Collections</h2>
 	</section>
 
 	<?php if(is_page('homes')): get_template_part('page/page-builders'); endif; ?>

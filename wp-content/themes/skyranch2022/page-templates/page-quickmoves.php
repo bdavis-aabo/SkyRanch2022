@@ -29,7 +29,6 @@ $_mobImage = get_sub_field('page_mobile_image');
 	<div class="page-divider">
 		<img src="<?php bloginfo('template_directory') ?>/assets/images/color-bar.png" class="img-fluid" alt="color bar" />
 	</div>
-	<h2 class="sub-heading">Quick Move-In Homes</h2>
 </section>
 
 <?php get_template_part('homes/homes-qmi') ?>

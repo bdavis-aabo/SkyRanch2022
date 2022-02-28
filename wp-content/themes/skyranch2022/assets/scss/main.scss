@@ -19,6 +19,7 @@
 .homepage-section { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
 	&.homepage-content-section { padding: 4.25vh 0;
 		.homepage-container { flex-basis: 85%; text-align: center;
+			h1 { margin-bottom: 30px; }
 			p { margin-bottom: 2rem; line-height: 29px; }
 			a { color: $aqua;
 				&:hover { color: $ltblue; }
@@ -27,8 +28,8 @@
 	}
 	&.homepage-callout-section {
 		.callout-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-			.homepage-callout { flex-basis: 90%; margin-bottom: 2rem; text-align: center;
-				.callout-image { margin-bottom: 1.5rem; }
+			.homepage-callout { flex-basis: 90%; margin-bottom: 3rem; text-align: center;
+				.callout-image { margin-bottom: 3.5em; }
 				h2 { font-family: 'avenir'; text-transform: uppercase; font-size: 24px; }
 				p  { padding: 0 1.25rem; }
 				.arrow-link { color: $ltblue;
@@ -45,8 +46,8 @@
 				h2 { font-size: 30px; line-height: 36px; }
 				p { margin-bottom: 2rem; line-height: 29px; }
 			}
-			.location-right {
-				.map-image { margin-bottom: 0; }
+			.location-right { flex-basis: 100%; flex-grow: 1;
+				.map-container { min-height: 500px; width: 100%; flex-basis: 100%; }
 			}
 		}
 	}
@@ -54,10 +55,10 @@
 
 // Page Styles
 .page-section { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-	&.page-content-section { padding: 4.25vh 0;
+	&.page-content-section { padding: 7vh 0;
 		.page-content-container { text-align: center; flex-basis: 80%;
-			h1 { font-size: 36px; }
-			p  { margin-bottom: 1.5rem; line-height: 29px; }
+			h1 { font-size: 40px; }
+			p  { margin-bottom: 1.5rem; line-height: 29px; padding: 0 7.5%; }
 			ul { list-style-position: inside; margin: 1rem 0; padding: 0;
 				li { padding: .25rem 0; }
 			}
@@ -136,25 +137,16 @@
 
 	// Location Page Styles
 	&.location-map-section { min-height: 50vh; position: relative;
-		.map-container { flex-basis: 100%; flex-grow: 1; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-			.mapboxgl-popup { max-width: 300px !important;
-				.mapboxgl-popup-content { padding: 1.5rem 2rem; text-align: center; background: $peach; color: $white;
-					h1 { font-size: 28px; }
-					.btn { font-size: 15px; padding-left: .9rem; padding-right: .9rem; }
-					.mapboxgl-popup-close-button { font-size: 20px; color: $white; }
-				}
-				.mapboxgl-popup-tip { border-top-color: $peach; }
-			}
-		}
+		.map-container { flex-basis: 100%; flex-grow: 1; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 	}
 	&.location-images {
 		.aligncenter { margin-bottom: 0; }
 	}
 
 	// News Page Styles
-	&.blog-header { margin-top: 60px; padding: 2rem 0;
+	&.blog-header { margin-top: 60px; padding: 4.5em 0;
 		h1, h3 { flex-basis: 100%; flex-grow: 1; text-align: center; }
-		h1 { font-size: 36px; margin-bottom: 10px; }
+		h1 { font-size: 40px; margin-bottom: 10px; }
 		h3 { font-size: 18px; font-family: 'avenir'; text-transform: uppercase; margin-bottom: 0; }
 	}
 	&.article-section {
@@ -218,6 +210,8 @@
 				a {
 					.aligncenter { margin-bottom: 0; }
 				}
+				&:first-child { margin-right: 3.25em; }
+				&:last-child  { margin-left: 3.25em; }
 			}
 		}
 	}
@@ -234,6 +228,15 @@
 		.footer-copyright { flex-basis: 90%; font-size: .9em; }
 	}
 }
+
+.mapboxgl-popup { max-width: 300px !important;
+	.mapboxgl-popup-content { padding: 1.5rem 2rem; text-align: center; background: $peach; color: $white;
+		h1 { font-size: 28px; }
+		.btn { font-size: 15px; padding-left: .9rem; padding-right: .9rem; }
+		.mapboxgl-popup-close-button { font-size: 20px; color: $white; }
+	}
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip { border-top-color: $peach !important; }
 
 /*** SMALL DEVICES : Landscape phones, 576px + ***/
 @media (min-width: 576px){
@@ -273,11 +276,13 @@
 	// Page Styles
 	.page-section {
 		&.page-content-section {
-			.page-content-container { flex-basis: 70%; }
+			.page-content-container { flex-basis: 70%; padding-bottom: 4.5vh;  }
 			.page-divider { flex-basis: 50%; }
 		}
 		&.education-section { margin-bottom: 1.5vh;
-			.education-container { flex-basis: 80%; }
+			.education-container { flex-basis: 80%; text-align: center;
+				p { text-align: center; }
+			}
 		}
 
 		// Homes page styles
@@ -346,9 +351,9 @@
 	// Page Styles
 	.page-section {
 		&.education-section { margin-bottom: 2.5vh;
-			.education-container { flex-basis: 90%; flex-wrap: nowrap; align-items: stretch;
+			.education-container { flex-basis: 90%;
 				.education-image,
-				.education-content { flex-basis: 50%; }
+				.education-content { flex-basis: 100%; flex-grow: 1; }
 				.education-content { padding: 2rem; font-size: .95em;
 					p { margin-bottom: 10px;
 						&:last-child { margin-bottom: 0; }
@@ -362,8 +367,8 @@
 /*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/
 @media (min-width: 1200px){
 	.homepage-section {
-		&.homepage-content-section {
-			.homepage-container { flex-basis: 60%; }
+		&.homepage-content-section { padding: 7vh 0;
+			.homepage-container { flex-basis: 60%; padding-bottom: 4.5vh; }
 			.homepage-divider   { flex-basis: 50%; }
 		}
 		&.homepage-location-section {
@@ -379,9 +384,7 @@
 	// Page Styles
 	.page-section {
 		&.education-section { margin-bottom: 2.5vh;
-			.education-container { flex-basis: 90%; flex-wrap: nowrap; align-items: stretch;
-				.education-image,
-				.education-content { flex-basis: 50%; }
+			.education-container { flex-basis: 90%;
 				.education-content { padding: 2rem; font-size: 1em;
 					p { margin-bottom: 10px; text-align: left;
 						&:last-child { margin-bottom: 0; }
@@ -419,7 +422,9 @@
 		}
 
 		// News Page Styles
-		&.blog-header { margin-top: 0; }
+		&.blog-header { margin-top: 0;
+			h1 { margin-bottom: 0; }
+		}
 		&.article-section {
 			.article-container { flex-basis: 100%; flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch;
 				.blog-post { flex-basis: 25%; flex-grow: 1;

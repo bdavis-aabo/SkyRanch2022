@@ -56,9 +56,7 @@
 			</div>
 			<?php endwhile; ?>
 			<div class="location-right">
-				<figure class="map-image">
-					<img src="<?php bloginfo('template_directory') ?>/assets/images/map-sidebar-image.jpg" alt="<?php bloginfo('name') ?> - Location" class="img-fluid" />
-				</figure>
+				<div class="map-container homepage-map" id="homepageMap"></div>
 			</div>
 		</div>
 	</section>

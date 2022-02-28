@@ -31,7 +31,7 @@
 		&.is-visible { transform: translateY(0); opacity: 1; }
 		.navigation { flex-basis: 100%; flex-grow: 1; padding: 0; position: relative; font-size: 18px; text-transform: uppercase;
 			#main-menu-navbar { flex-basis: 100%; flex-grow: 1;
-				.main-menu { list-style: none; margin: 0; padding: 0;
+				.main-menu { list-style: none; margin: 0; padding: 0; font-size: 16px;
 					.menu-item { padding: .75rem 1.5rem;
 						a { color: $ltgray;
 							&:hover { color: $ltblue; }
@@ -122,8 +122,8 @@
 		.header-right { flex-basis: 70%; position: unset; transform: translateY(0); opacity: 1; flex-wrap: nowrap; justify-content: center;
 			background: transparent; bottom: auto; padding: 0;
 			.navigation { display: flex; flex-wrap: nowrap; justify-content: flex-start; align-items: center; margin-bottom: 0;
-				#main-menu-navbar { font-size: .85em; margin-left: 0; flex-basis: auto; flex-grow: 0;
-					.main-menu { display: flex; flex-wrap: nowrap; align-items: center; margin-bottom: 0; margin-left: 0; justify-content: flex-start;
+				#main-menu-navbar { margin-left: 0; flex-basis: auto; flex-grow: 0;
+					.main-menu { display: flex; flex-wrap: nowrap; align-items: center; margin-bottom: 0; margin-left: 0; justify-content: flex-start; font-size: 15px;
 						.menu-item { padding: .75rem .85rem;
 					    a { color: $ltgray; }
 					    &.mobileonly { display: none; }

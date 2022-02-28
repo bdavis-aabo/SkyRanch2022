@@ -48,16 +48,26 @@ function wpt_register_js(){
 }
 
 function wpt_map_scripts(){
-	if(is_page('location')){
+	if(is_page('location') || is_front_page()){
 		wp_enqueue_script('mapbox.min', '//api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js', 'jquery', '', true);
     wp_enqueue_style('mapbox.min', '//api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css');
-    wp_enqueue_script(
-      'maps.min',
-      get_template_directory_uri() . '/assets/js/maps.min.js',
-      array(),
-      filemtime(get_template_directory() . '/assets/js/maps.min.js'),
-      true
-    );
+	}
+	if(is_page('location')){
+	  wp_enqueue_script(
+	    'maps.min',
+	    get_template_directory_uri() . '/assets/js/maps.min.js',
+	    array(),
+	    filemtime(get_template_directory() . '/assets/js/maps.min.js'),
+	    true
+	  );
+	} elseif(is_front_page()){
+	    wp_enqueue_script(
+	    'homeMaps.min',
+	    get_template_directory_uri() . '/assets/js/homeMaps.min.js',
+	    array(),
+	    filemtime(get_template_directory() . '/assets/js/homeMaps.min.js'),
+	    true
+	  );
 	}
 }
 
