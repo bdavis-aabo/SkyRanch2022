@@ -354,11 +354,12 @@
 			.education-container { flex-basis: 90%;
 				.education-image,
 				.education-content { flex-basis: 100%; flex-grow: 1; }
-				.education-content { padding: 2rem; font-size: .95em;
+				.education-content { padding: 2rem; font-size: .95em; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
 					p { margin-bottom: 10px;
 						&:last-child { margin-bottom: 0; }
 					}
 				}
+
 			}
 		}
 	}
@@ -386,6 +387,7 @@
 		&.education-section { margin-bottom: 2.5vh;
 			.education-container { flex-basis: 90%;
 				.education-content { padding: 2rem; font-size: 1em;
+					.education-content-container { flex-basis: 70%; text-align: center; }
 					p { margin-bottom: 10px; text-align: left;
 						&:last-child { margin-bottom: 0; }
 					}
