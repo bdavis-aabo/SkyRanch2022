@@ -24,6 +24,7 @@
 			a { color: $aqua;
 				&:hover { color: $ltblue; }
 			}
+			ul { list-style-position: inside; }
 		}
 	}
 	&.homepage-callout-section {
@@ -386,7 +387,7 @@
 	.page-section {
 		&.education-section { margin-bottom: 2.5vh;
 			.education-container { flex-basis: 90%;
-				.education-content { padding: 2rem; font-size: 1em;
+				.education-content { padding: 4.5em 0; font-size: 1em;
 					.education-content-container { flex-basis: 70%; text-align: center; }
 					p { margin-bottom: 10px; text-align: left;
 						&:last-child { margin-bottom: 0; }
