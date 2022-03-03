@@ -31,7 +31,9 @@
 				<?php echo get_sub_field('home_square_footage') . ' sq. ft. | ' . get_sub_field('home_beds') . ' beds | ' . get_sub_field('home_baths') . ' bath | ' . get_sub_field('home_garage') . ' garage' ?>
 			</p>
 			<?php endwhile; endif; ?>
-			<p><?php echo '$' . get_field('home_price') ?></p>
+			<p>
+				<?php php if(get_field('home_price') != 'Coming Soon')): echo '$' . get_field('home_price'); else: echo get_field('home_price'); endif; ?>
+			</p>
 
 			<a href="<?php echo get_field('home_url') ?>" title="view home: <?php the_title() ?>" class="btn outline-btn gray-btn" target="_blank">View Home</a>
 		</article>
