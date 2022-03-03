@@ -32,7 +32,7 @@
 			</p>
 			<?php endwhile; endif; ?>
 			<p>
-				<?php php if(get_field('home_price') != 'Coming Soon')): echo '$' . get_field('home_price'); else: echo get_field('home_price'); endif; ?>
+				<?php if(get_field('home_price') != 'Coming Soon')): echo '$' . get_field('home_price'); else: echo get_field('home_price'); endif; ?>
 			</p>
 
 			<a href="<?php echo get_field('home_url') ?>" title="view home: <?php the_title() ?>" class="btn outline-btn gray-btn" target="_blank">View Home</a>
