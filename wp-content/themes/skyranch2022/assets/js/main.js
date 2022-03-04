@@ -26,4 +26,20 @@ $(document).ready(function(){
 
 	var cardH = $('.blog-post > .front > .article-image').width();
 	$('.article-container > .card').css('height', cardH + 'px');
+
+	//email to script
+  function mailToForm(){
+    var emailTo = [];
+    var builder = [];
+
+    $.each($('input.mailto_check:checked'), function(){
+      emailTo.push($(this).attr('data-mailto'));
+      //builder.push($(this).attr('data-builder'));
+    });
+    $('#mailto').val(emailTo.join(', '));
+  }
+  $('input.mailto_check').change(function(){
+    mailToForm();
+  });
+
 });
