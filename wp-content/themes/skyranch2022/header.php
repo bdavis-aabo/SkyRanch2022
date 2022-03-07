@@ -20,6 +20,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+  <?php include('assets/_inc/ga.php'); ?>
+
   <?php wp_head() ?>
 </head>
 <body <?php body_class(); ?>>
