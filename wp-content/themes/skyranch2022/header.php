@@ -21,7 +21,7 @@
   <![endif]-->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-  <<?php require_once('assets/_inc/ga-include.php') ?>
+  <?php require_once('assets/_inc/ga-include.php') ?>
 
   <?php wp_head() ?>
 </head>
