@@ -48,6 +48,8 @@ wp-content/themes/twenty*/
 
 #ignore ga.php
 wp-content/themes/skyranch2022/assets/_inc/ga.php
+wp-content/themes/skyranch2022/assets/_inc/ga-include.php
+wp-content/themes/skyranch2022/assets/_inc/ga-body.php
 
 
 # ignore node dependency directories
