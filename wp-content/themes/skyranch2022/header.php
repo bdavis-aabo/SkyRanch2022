@@ -21,11 +21,13 @@
   <![endif]-->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-  <?php include('assets/_inc/ga.php'); ?>
+  <<?php require_once('assets/_inc/ga-include.php') ?>
 
   <?php wp_head() ?>
 </head>
 <body <?php body_class(); ?>>
+
+	<?php require_once('assets/_inc/ga-body.php') ?>
 
 	<header class="header">
 		<div class="header-identity">
