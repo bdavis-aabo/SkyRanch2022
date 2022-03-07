@@ -211,7 +211,7 @@
 				a {
 					.aligncenter { margin-bottom: 0; }
 				}
-				&:first-child { margin-right: 3.25em; }
+				&:first-child { margin-right: 2.5em; flex-basis: 45%; }
 				&:last-child  { margin-left: 3.25em; }
 			}
 		}
