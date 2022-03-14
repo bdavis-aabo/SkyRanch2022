@@ -18,9 +18,15 @@
 			<ul class="builder-list">
 			<?php while($_builders->have_posts()): $_builders->the_post(); $_logo = get_field('homebuilder_logo'); ?>
 				<li class="builder">
+					<?php if($post->post_name == 'kb-home' || $post->post_name == 'richmond-american-homes'): ?>
 					<a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
 						<img src="<?php echo $_logo['url'] ?>" alt="<?php the_title() ?>" class="img-fluid aligncenter" />
 					</a>
+					<?php else: ?>
+						<a href="/homes" title="<?php the_title() ?>">
+							<img src="<?php echo $_logo['url'] ?>" alt="<?php the_title() ?>" class="img-fluid aligncenter" />
+						</a>
+					<?php endif; ?>
 				</li>
 			<?php endwhile; ?>
 			</ul>
